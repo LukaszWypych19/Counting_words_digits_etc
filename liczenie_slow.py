@@ -5,8 +5,8 @@ czytaj = plik.read()
 print(czytaj)
 plik.close()
 
-
-
+list_of_digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+list_of_marks = [' ', ',', '.', ':', '/']
 def ilosc_znakow():
     return len(czytaj)
 
@@ -15,16 +15,34 @@ def ilosc_slow():
     return txt
 
 def ilosc_liter():
-    slowa = 0
+    litera = 0
+    for i in czytaj:
+        if i in list_of_digits and list_of_marks:
+            litera += 0
+        else:
+            litera += 1
+    return litera
 
-    for char in czytaj:
-        char = char.lower()
-        if char == ' ':
-            slowa += 1
-        # else:
+# funkcja licząca ile roznych cyfr pojawia sie w tekscie
+def ilosc_roznych_cyfr():
+    digit = 0
+    for i in list_of_digits:
+        if i in czytaj:
+            digit += 1
+    return digit
 
+# funkcja licząca ile cyfr pojawia sie w tekscie
+def ilosc_wszystkich_cyfr():
+    digit = 0
+    for i in czytaj:
+        if i in list_of_digits:
+            digit += 1
+    return digit
 
 print(f'W tym tekscie jest {ilosc_znakow()} znakow')
 print(f'W tym tekscie jest {ilosc_slow()} słow')
-print(f'W tym tekscie jest {ilosc_liter()} liter')
+print(f'W tym tekscie jest', ilosc_roznych_cyfr(), 'roznego rodzaju cyfr')
+print(f'W tym tekscie jest', ilosc_wszystkich_cyfr(), 'cyfr')
+print(f'W tym tekscie jest', ilosc_liter(), 'liter')
+
 
