@@ -17,10 +17,9 @@ def ilosc_slow():
 def ilosc_liter():
     litera = 0
     for i in czytaj:
-        if i in list_of_digits and list_of_marks:
-            litera += 0
-        else:
-            litera += 1
+        if i not in list_of_marks:
+            if i not in list_of_digits:
+                litera += 1
     return litera
 
 # funkcja licząca ile roznych cyfr pojawia sie w tekscie
@@ -39,10 +38,9 @@ def ilosc_wszystkich_cyfr():
             digit += 1
     return digit
 
+
 print(f'W tym tekscie jest {ilosc_znakow()} znakow')
-print(f'W tym tekscie jest {ilosc_slow()} słow')
+print(f'W tym tekscie jest {ilosc_slow()} słów')
 print(f'W tym tekscie jest', ilosc_roznych_cyfr(), 'roznego rodzaju cyfr')
 print(f'W tym tekscie jest', ilosc_wszystkich_cyfr(), 'cyfr')
 print(f'W tym tekscie jest', ilosc_liter(), 'liter')
-
-
