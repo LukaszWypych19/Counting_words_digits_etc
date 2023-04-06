@@ -48,6 +48,12 @@ def ilosc_slow(czytaj):
     return len(czytaj.split())
 
 
+
+                        # DOdac liczenie spolglosek i samoglosek
+
+
+
+
 print(f'W tym tekscie jest {ilosc_znakow()} znakow')
 print(f'W tym tekscie jest {ilosc_liter()} liter')
 print(f'W tym tekscie jest {ilosc_roznych_cyfr()} roznego rodzaju cyfr')
